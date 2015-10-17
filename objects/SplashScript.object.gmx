@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,19 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MINIMUM_TIME_BETWEEN_STRIKES = 5*60;
-MAXIMUM_TIME_BETWEEN_STRIKES = 15*60;
-
-timeBetweenFlashAndStrike = 1.5*60;
-
-inBetweenFlashAndStrike = false;
-
-
-
-time = 0;
-nextStrike = random_range(MINIMUM_TIME_BETWEEN_STRIKES, MAXIMUM_TIME_BETWEEN_STRIKES);
-nextFlash = nextStrike - timeBetweenFlashAndStrike;
-
+            <string>time = 0;
 </string>
           </argument>
         </arguments>
@@ -62,24 +50,9 @@ nextFlash = nextStrike - timeBetweenFlashAndStrike;
             <kind>1</kind>
             <string>time += 1;
 
-if (time &gt;= nextFlash){
-    show_debug_message("lightning flash");
-    instance_create(0, 0, WhiteFlash);
-    inBetweenFlashAndStrike = true;
-    nextFlash = nextStrike + 1;
-}
+if (time &gt; 1*60){
 
-if (time &gt;= nextStrike){
-
-    show_debug_message("lightning strike");
-    inBetweenFlashAndStrike = false;
-    time = 0;
-    nextStrike = random_range(MINIMUM_TIME_BETWEEN_STRIKES, MAXIMUM_TIME_BETWEEN_STRIKES);
-    nextFlash = nextStrike - timeBetweenFlashAndStrike;
-    timeBetweenFlashAndStrike *= .9;
-    show_debug_message("time between flash and strike is now " + string(timeBetweenFlashAndStrike));
-    audio_play_sound(lightning_strike, 1, false);
-
+    room_goto(GameplayRoom);
 
 }
 </string>
