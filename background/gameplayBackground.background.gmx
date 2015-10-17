@@ -15,5 +15,5 @@
   <For3D>0</For3D>
   <width>150</width>
   <height>64</height>
-  <data>images\gameplayBackground.png</data>
+  <data>images\GameplayBackground.png</data>
 </background>

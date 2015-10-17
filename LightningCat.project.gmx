@@ -6,18 +6,21 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\catSprite</sprite>
+    <sprite>sprites\CatSprite</sprite>
+    <sprite>sprites\WhitePixel</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\gameplayBackground</background>
+    <background>background\GameplayBackground</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\catObject</object>
-    <object>objects\lightningController</object>
+    <object>objects\CatObject</object>
+    <object>objects\LightningController</object>
+    <object>objects\WhiteFlash</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
-    <room>rooms\gameplayRoom</room>
+    <room>rooms\GameplayRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
