@@ -67,6 +67,10 @@ if (time &gt;= nextFlash){
     instance_create(0, 0, WhiteFlash);
     inBetweenFlashAndStrike = true;
     nextFlash = nextStrike + 1;
+//    audio_play_sound(Cue_1, 1, false);
+    
+        
+
 }
 
 if (time &gt;= nextStrike){
@@ -79,6 +83,16 @@ if (time &gt;= nextStrike){
     timeBetweenFlashAndStrike *= .9;
     show_debug_message("time between flash and strike is now " + string(timeBetweenFlashAndStrike));
     audio_play_sound(lightning_strike, 1, false);
+    
+//    if (audio_is_playing(Cue_1)){
+//        audio_stop_sound(Cue_1);
+//    
+//    }
+    
+    //if (!audio_is_playing(MainTrack)){
+    //    audio_resume_sound(MainTrack);
+    
+    //}
 
 
 }

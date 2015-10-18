@@ -6,23 +6,27 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\lightning_strike</sound>
+    <sound>sound\MainTrack</sound>
+    <sound>sound\Cue_1</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\CatSprite</sprite>
     <sprite>sprites\WhitePixel</sprite>
-    <sprite>sprites\GroundSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\GameplayBackground</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\CatObject</object>
     <object>objects\LightningController</object>
     <object>objects\WhiteFlash</object>
-    <object>objects\GroundObject</object>
     <object>objects\Globals</object>
     <object>objects\SplashScript</object>
+    <object>objects\TitleObj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\SplashScreenRoom</room>

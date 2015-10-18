@@ -91,7 +91,7 @@ if (bbox_right &gt;= global.SCREEN_WIDTH){
             <string>
 _lockoutTimer -= 1;
 
-show_debug_message("cat y = " + string(y));
+
 </string>
           </argument>
         </arguments>
