@@ -8,10 +8,16 @@
     <sound>sound\lightning_strike</sound>
     <sound>sound\MainTrack</sound>
     <sound>sound\Cue_1</sound>
+    <sound>sound\CatDodgeSuccess</sound>
+    <sound>sound\CatStruckByLightning</sound>
+    <sound>sound\CatStruckWithCue</sound>
+    <sound>sound\CatDodgeWithCue</sound>
+    <sound>sound\Death</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\CatSprite</sprite>
     <sprite>sprites\WhitePixel</sprite>
+    <sprite>sprites\Bolt</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\GameplayBackground</background>
@@ -27,6 +33,9 @@
     <object>objects\Globals</object>
     <object>objects\SplashScript</object>
     <object>objects\TitleObj</object>
+    <object>objects\BoltObject</object>
+    <object>objects\GameOverObject</object>
+    <object>objects\GUIObject</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\SplashScreenRoom</room>

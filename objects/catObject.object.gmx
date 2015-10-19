@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>gravity = .55;
 _lockoutTimer = 0;
-
+dodgeSuccess = false;
+previousX = x;
+previousY = y;
 </string>
           </argument>
         </arguments>
@@ -56,8 +58,9 @@ _lockoutTimer = 0;
     hspeed = 0;
 }
 
-if (x &lt;= 0){
-    x *= -1;
+if (bbox_left &lt;= 0){
+    x = (bbox_right - bbox_left)/2 - bbox_left;
+
     hspeed *= -1;
 }
 
@@ -114,12 +117,19 @@ _lockoutTimer -= 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (_lockoutTimer &gt; 0)
+            <string>if (_lockoutTimer &gt; 0 || global.gameState == GameState.gameover)
     return 0;
-    
+
+previousX = x;
+previousY = y;
+        
 _lockoutTimer = global.JUMP_LOCKOUT;
+
+audio_play_sound(CatDodgeSuccess, 2, false);
+
 vspeed = random_range(-5, -10);
-if (random(1) &gt;= .5){
+
+if (x &lt;= global.SCREEN_WIDTH/2){
     hspeed = random_range(7.5, 12.5)
 }
 else {
@@ -131,6 +141,7 @@ y = global.GROUND_Y;
 
 if (LightningController.inBetweenFlashAndStrike = true){   
     show_debug_message("success");
+    dodgeSuccess = true;
 }
 else {
     show_debug_message("fail");
