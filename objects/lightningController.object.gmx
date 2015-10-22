@@ -97,10 +97,15 @@ if (time &gt;= nextStrike){
     //}
     
     if (CatObject.dodgeSuccess == true){
+        var prevX = CatObject.previousX;
+        var prevY = CatObject.previousY;
+        effect_create_above(ef_spark, prevX, prevY, 3, c_white);
         instance_create(CatObject.previousX, CatObject.previousY, BoltObject);
         score++;
     }
     else {
+        CatObject.state = CatState.shocked;
+        CatObject.time = 0;
         audio_stop_sound(MainTrack);
         audio_play_sound(CatStruckWithCue, 2, false);
         instance_create(CatObject.x, CatObject.y, BoltObject);

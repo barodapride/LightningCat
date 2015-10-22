@@ -25,16 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.GROUND_Y = 700;
+            <string>global.GROUND_Y = 650;
 
 global.SCREEN_WIDTH = 1024;
+global.SCREEN_HEIGHT = 768;
 
 global.JUMP_LOCKOUT = 180;
 
 enum CatState {
-    sitting = 1,
-    jumping = 2,
-    shocked = 3
+    sitting = 0,
+    jumping = 1,
+    cooldown = 2,
+    shocked = 3,
+    dead = 4
 }
 
 enum GameState {
@@ -47,6 +50,7 @@ global.gameState = GameState.gameplay;
 if (audio_is_playing(MainTrack) == false){
     audio_play_sound(MainTrack, 1, true);
 }
+
 
 </string>
           </argument>

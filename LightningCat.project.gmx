@@ -13,6 +13,7 @@
     <sound>sound\CatStruckWithCue</sound>
     <sound>sound\CatDodgeWithCue</sound>
     <sound>sound\Death</sound>
+    <sound>sound\snd_rain</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\CatSprite</sprite>
@@ -36,6 +37,7 @@
     <object>objects\BoltObject</object>
     <object>objects\GameOverObject</object>
     <object>objects\GUIObject</object>
+    <object>objects\obj_rain</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\SplashScreenRoom</room>

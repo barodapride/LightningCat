@@ -25,11 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity = .55;
+            <string>time = 0;
+gravity = .55;
 _lockoutTimer = 0;
+_xDisplacement = 0;
 dodgeSuccess = false;
 previousX = x;
 previousY = y;
+
+image_xscale = .4;
+image_yscale = .4;
+
+image_speed = 0;
+image_index = 0;
+
+state = CatState.sitting;
+
 </string>
           </argument>
         </arguments>
@@ -52,47 +63,55 @@ previousY = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (y &gt; global.GROUND_Y){
+            <string>time += 1;
+
+switch(state){
+
+case CatState.sitting:
+    y = global.GROUND_Y;
+    break;
+
+case CatState.jumping:
+    if (y &gt; global.GROUND_Y){
+        y = global.GROUND_Y;
+        vspeed = 0;
+        hspeed = 0;
+
+        if (_lockoutTimer &gt; 0){
+            state = CatState.cooldown;
+        }
+        else {
+            state = CatState.sitting;
+        }
+    }
+    break;
+
+case CatState.cooldown:
+    _lockoutTimer -= 1;
+    y = global.GROUND_Y;
+    if (_lockoutTimer &lt;= 0){
+        state = CatState.sitting;
+    }
+    break;
+
+case CatState.shocked:
+
+    if (time &gt; 3*60){
+        state = CatState.dead;
+
+    }
+    _xDisplacement = random_range(-3,3);
+    y = global.GROUND_Y;
+    break;
+
+case CatState.dead:
     y = global.GROUND_Y;
     vspeed = 0;
     hspeed = 0;
+    effect_create_above(ef_smokeup, x, y, 1, c_white);
+    break;
+
 }
-
-if (bbox_left &lt;= 0){
-    x = (bbox_right - bbox_left)/2 - bbox_left;
-
-    hspeed *= -1;
-}
-
-if (bbox_right &gt;= global.SCREEN_WIDTH){
-    x -= bbox_right - global.SCREEN_WIDTH;
-    hspeed *= -1;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-_lockoutTimer -= 1;
 
 
 </string>
@@ -117,38 +136,87 @@ _lockoutTimer -= 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (_lockoutTimer &gt; 0 || global.gameState == GameState.gameover)
-    return 0;
+            <string>
+switch(state){
 
-previousX = x;
-previousY = y;
+case CatState.sitting:
+    state = CatState.jumping;
+    previousX = x;
+    previousY = y;
         
-_lockoutTimer = global.JUMP_LOCKOUT;
+    _lockoutTimer = global.JUMP_LOCKOUT;
 
-audio_play_sound(CatDodgeSuccess, 2, false);
+    audio_play_sound(CatDodgeSuccess, 2, false);
 
-vspeed = random_range(-5, -10);
+    vspeed = random_range(-5, -10);
 
-if (x &lt;= global.SCREEN_WIDTH/2){
-    hspeed = random_range(7.5, 12.5)
+    if (x &lt;= global.SCREEN_WIDTH/2){
+        hspeed = random_range(7.5, 12.5);
+        if (image_xscale &gt; 0){
+            image_xscale = -image_xscale;
+        }
+    
+    }
+    else {
+        hspeed = random_range(-7.5, -12.5);
+        if (image_xscale &lt; 0){
+            image_xscale = -image_xscale;
+        }
+    }
+
+
+    y = global.GROUND_Y;
+
+    if (LightningController.inBetweenFlashAndStrike = true){   
+        show_debug_message("success");
+        dodgeSuccess = true;
+    }
+    else {
+        show_debug_message("fail");
+    }
+    break;
+
+case CatState.jumping:
+    break;
+
+case CatState.cooldown:
+    break;
+
+case CatState.shocked:
+    break;
+
+case CatState.dead:
+    break;
+
 }
-else {
-    hspeed = random_range(-7.5, -12.5)
-}
 
 
-y = global.GROUND_Y;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var xscale = image_xscale;
+var yscale = image_yscale;
 
-if (LightningController.inBetweenFlashAndStrike = true){   
-    show_debug_message("success");
-    dodgeSuccess = true;
-}
-else {
-    show_debug_message("fail");
-}
-
-
-
+draw_sprite_ext(CatSprite, state, x + _xDisplacement, y, xscale, yscale, 0, c_white, 1);
 </string>
           </argument>
         </arguments>
