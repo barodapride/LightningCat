@@ -19,6 +19,8 @@
     <sprite>sprites\CatSprite</sprite>
     <sprite>sprites\WhitePixel</sprite>
     <sprite>sprites\Bolt</sprite>
+    <sprite>sprites\spr_gameover</sprite>
+    <sprite>sprites\retry</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\GameplayBackground</background>
@@ -38,6 +40,8 @@
     <object>objects\GameOverObject</object>
     <object>objects\GUIObject</object>
     <object>objects\obj_rain</object>
+    <object>objects\ob_gameover</object>
+    <object>objects\obj_retry</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\SplashScreenRoom</room>

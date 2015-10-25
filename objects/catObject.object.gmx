@@ -108,7 +108,7 @@ case CatState.dead:
     y = global.GROUND_Y;
     vspeed = 0;
     hspeed = 0;
-    effect_create_above(ef_smokeup, x, y, 1, c_white);
+
     break;
 
 }
