@@ -21,6 +21,8 @@
     <sprite>sprites\Bolt</sprite>
     <sprite>sprites\spr_gameover</sprite>
     <sprite>sprites\retry</sprite>
+    <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_instructions</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\GameplayBackground</background>
@@ -42,6 +44,9 @@
     <object>objects\obj_rain</object>
     <object>objects\ob_gameover</object>
     <object>objects\obj_retry</object>
+    <object>objects\obj_fullscreencontroller</object>
+    <object>objects\obj_title</object>
+    <object>objects\obj_instructions</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\SplashScreenRoom</room>
