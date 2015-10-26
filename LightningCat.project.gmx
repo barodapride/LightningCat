@@ -37,7 +37,6 @@
     <object>objects\WhiteFlash</object>
     <object>objects\Globals</object>
     <object>objects\SplashScript</object>
-    <object>objects\TitleObj</object>
     <object>objects\BoltObject</object>
     <object>objects\GameOverObject</object>
     <object>objects\GUIObject</object>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>
 draw_set_font(font0);
-draw_text_transformed(global.SCREEN_WIDTH/4, 25, string(score), 3, 3, 0);
+draw_text_transformed(global.SCREEN_WIDTH/5, 25, "Score: " + string(score), 1.5, 1.5, 0);
 </string>
           </argument>
         </arguments>

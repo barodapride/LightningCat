@@ -53,10 +53,9 @@
   <instances>
     <instance objName="SplashScript" x="224" y="192" name="inst_B1788A5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Globals" x="64" y="64" name="inst_4AF7488E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="TitleObj" x="256" y="64" name="inst_3CF05ACF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fullscreencontroller" x="544" y="96" name="inst_D84AAE2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_title" x="832" y="544" name="inst_C51F383E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_instructions" x="160" y="480" name="inst_28096016" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_instructions" x="768" y="704" name="inst_28096016" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
