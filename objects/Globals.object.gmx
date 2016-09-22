@@ -25,12 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.GROUND_Y = 640;
+            <string>global.GROUND_Y = 700;
 
 global.SCREEN_WIDTH = 1024;
 global.SCREEN_HEIGHT = 768;
 
-global.JUMP_LOCKOUT = 180;
+global.JUMP_LOCKOUT = 60;
 
 enum CatState {
     sitting = 0,

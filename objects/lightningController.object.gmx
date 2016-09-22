@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MINIMUM_TIME_BETWEEN_STRIKES = 5*60;
-MAXIMUM_TIME_BETWEEN_STRIKES = 15*60;
+            <string>MINIMUM_TIME_BETWEEN_STRIKES = 3*60;
+MAXIMUM_TIME_BETWEEN_STRIKES = 8*60;
 
 timeBetweenFlashAndStrike = 1.5*60;
 

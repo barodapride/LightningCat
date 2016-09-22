@@ -41,6 +41,8 @@ image_index = 0;
 
 state = CatState.sitting;
 
+
+
 </string>
           </argument>
         </arguments>
@@ -82,6 +84,7 @@ case CatState.jumping:
         }
         else {
             state = CatState.sitting;
+            TweenPlay(TweenSimpleScale(1, 2, 60, EaseOutElastic));
         }
     }
     break;
